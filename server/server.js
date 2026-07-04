@@ -7,10 +7,18 @@ const authRoutes = require('./routes/auth');
 
 const app = express();
 
+
+const transactionRoutes = require('./routes/transactions');
+const budgetRoutes      = require('./routes/budgets');
+
+
 app.use(cors({ origin: 'http://localhost:5173' }));
 app.use(express.json());
 
 app.use('/api/auth', authRoutes);
+app.use('/api/transactions', transactionRoutes);
+app.use('/api/budgets',      budgetRoutes);
+
 
 app.get('/', (req, res) => res.send('Finsight API running'));
 
