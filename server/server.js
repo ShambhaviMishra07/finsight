@@ -12,7 +12,7 @@ const transactionRoutes = require('./routes/transactions');
 const budgetRoutes      = require('./routes/budgets');
 
 
-app.use(cors({ origin: 'http://localhost:5173' }));
+app.use(cors({ origin: ['http://localhost:5173', 'http://localhost:5174'] }));
 app.use(express.json());
 
 app.use('/api/auth', authRoutes);
