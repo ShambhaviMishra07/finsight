@@ -1,114 +1,115 @@
-# 📄 Resume Builder API
+# Finsight — Personal Finance Dashboard
 
-A backend-focused REST API that allows users to register, build their resume, upload a profile photo, and download it as a PDF. Built with Node.js and Express, it features JWT-based authentication, Cloudinary cloud storage for photo uploads, and Puppeteer for dynamic PDF generation — all connected to a simple HTML/CSS/JS frontend.
+A full-stack personal finance app built with the MERN stack. Track income and expenses, set monthly budgets, and visualise your spending — all in one clean dashboard.
+
+---
+## Screenshots
+
+<p align="center">
+  <img src="./photos/home_page.png" width="48%" />
+  <img src="./photos/Dashboard.png" width="48%" />
+</p>
+
+<p align="center">
+  <img src="./photos/Budget.png" width="48%" />
+  <img src="./photos/analytics.png" width="48%" />
+</p>
+
 
 ---
 
-## 🛠️ Tech Stack
+## Features
 
-| Layer | Technology |
-|-------|-----------|
-| Backend | Node.js, Express.js |
-| Database | MongoDB, Mongoose |
-| Authentication | JWT, bcryptjs |
-| File Upload | Multer, Cloudinary |
-| PDF Generation | Puppeteer |
-| Frontend | HTML, CSS, Vanilla JS |
-
----
-
-## 📁 Project Structure
-
-```
-resume-builder/
-├── config/
-│   ├── db.js              # MongoDB connection
-│   └── cloudinary.js      # Cloudinary setup
-├── modules/
-│   ├── auth/              # Register, Login, User model
-│   ├── resume/            # Resume CRUD + PDF download
-│   └── upload/            # Photo upload to Cloudinary
-├── middleware/
-│   └── auth.middleware.js # JWT verification
-├── utils/
-│   └── generatePDF.js     # Puppeteer PDF logic
-├── public/                # Frontend (HTML, CSS, JS)
-│   ├── index.html         # Login / Register
-│   ├── dashboard.html     # Fill resume form
-│   └── resume.html        # View + download resume
-└── server.js              # Entry point
-```
+- **Dashboard** — balance overview, 4 live charts (cashflow, pie, bar, trend), recent activity table, budget goals
+- **Transactions** — add, filter by type, search by name or category, delete
+- **Budget tracker** — set monthly limits per category, animated progress bars, over-budget alerts
+- **Analytics** — bar chart, line chart, top spending categories, savings rate insight
+- **Landing page** — public marketing page with live mini-dashboard in the hero
+- **Auth** — JWT-based login and register, protected routes, session persistence
+- **Dark mode** — full theme toggle, preference saved to localStorage
+- **Responsive** — mobile sidebar drawer, works on all screen sizes
 
 ---
 
-## 🔄 Code Flow
+## Tech Stack
 
-```
-User (Browser)
-    ↓
-HTML form → fetch() API call
-    ↓
-Express Router → Middleware (JWT check)
-    ↓
-Controller (business logic)
-    ↓
-Mongoose → MongoDB (save/read data)
-    ↓
-[Photo]  → Multer → Cloudinary → save URL
-[PDF]    → Puppeteer → generate PDF → send file
-    ↓
-JSON response back to browser
+| Layer | Tech |
+|---|---|
+| Frontend | React, Tailwind CSS, React Router v6 |
+| Charts | Recharts |
+| Animation | Framer Motion |
+| State | Zustand |
+| Backend | Node.js, Express |
+| Database | MongoDB Atlas, Mongoose |
+| Auth | JWT, bcryptjs |
+
+---
+
+## Getting Started
+
+**Clone the repo**
+```bash
+git clone https://github.com/yourusername/finsight.git
+cd finsight
 ```
 
----
+**Backend**
+```bash
+cd server
+npm install
+```
 
-## 🔑 API Endpoints
-
-### Auth
-| Method | Route | Access | Description |
-|--------|-------|--------|-------------|
-| POST | `/auth/register` | Public | Register new user |
-| POST | `/auth/login` | Public | Login, returns JWT |
-
-### Resume
-| Method | Route | Access | Description |
-|--------|-------|--------|-------------|
-| POST | `/resume` | Protected | Create resume |
-| GET | `/resume` | Protected | Get your resume |
-| PUT | `/resume` | Protected | Update resume |
-| GET | `/resume/download` | Protected | Download as PDF |
-| GET | `/resume/:userId` | Public | View anyone's resume |
-
-### Upload
-| Method | Route | Access | Description |
-|--------|-------|--------|-------------|
-| POST | `/upload/photo` | Protected | Upload profile photo |
-
----
-
-## ⚙️ Setup & Installation
+Create `server/.env`:
+```
+MONGO_URI=your_mongodb_atlas_uri
+JWT_SECRET=your_secret_key
+PORT=5000
+```
 
 ```bash
-# 1. Clone the repo
-git clone https://github.com/yourusername/resume-builder.git
-cd resume-builder
-
-# 2. Install dependencies
-npm install
-
-# 3. Create .env file
-PORT=5000
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_jwt_secret
-CLOUDINARY_CLOUD_NAME=your_cloud_name
-CLOUDINARY_API_KEY=your_api_key
-CLOUDINARY_API_SECRET=your_api_secret
-
-# 4. Run the server
 npm run dev
 ```
 
-Open `http://localhost:5000` in your browser.
+**Frontend**
+```bash
+cd client
+npm install
+npm run dev
+```
+
+App runs at `http://localhost:5173`
 
 ---
+
+## Project Structure
+
+```
+finsight/
+├── client/                 # React frontend
+│   └── src/
+│       ├── pages/          # Dashboard, Transactions, Budget, Analytics, Landing
+│       ├── components/     # Sidebar, Topbar, StatCard, TransactionRow, Modals
+│       ├── store/          # Zustand finance store
+│       ├── context/        # AuthContext, ThemeContext
+│       └── api/            # Axios instance
+└── server/                 # Express backend
+    ├── models/             # User, Transaction, Budget
+    ├── routes/             # auth, transactions, budgets
+    └── middleware/         # JWT auth middleware
+```
+
+---
+
+## Live Demo
+
+| | |
+|---|---|
+| Frontend | [finsight.vercel.app](https://finsight.vercel.app) |
+| Backend | [finsight-api.onrender.com](https://finsight-api.onrender.com) |
+
+---
+
+## Author
+
+Built by **Shambhavi** · [GitHub](https://github.com/yourusername) · [LinkedIn](https://linkedin.com/in/yourusername)
 
