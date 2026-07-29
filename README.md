@@ -6,13 +6,13 @@ A full-stack personal finance app built with the MERN stack. Track income and ex
 ## Screenshots
 
 <p align="center">
-  <img src="./photos/home_page.png" width="48%" />
-  <img src="./photos/Dashboard.png" width="48%" />
+  <img src="photos/home_page.png" width="48%" />
+  <img src="photos/Dashboard.png" width="48%" />
 </p>
 
 <p align="center">
-  <img src="./photos/Budget.png" width="48%" />
-  <img src="./photos/analytics.png" width="48%" />
+  <img src="photos/Budget.png" width="48%" />
+  <img src="photos/analytics.png" width="48%" />
 </p>
 
 
