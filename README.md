@@ -111,5 +111,7 @@ finsight/
 
 ## Author
 
-Built by **Shambhavi** · [GitHub](https://github.com/yourusername) · [LinkedIn](https://linkedin.com/in/yourusername)
+Built by **Shambhavi** · 
+[GitHub](https://github.com/ShambhaviMishra07) · 
+
 
