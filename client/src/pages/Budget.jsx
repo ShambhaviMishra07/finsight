@@ -5,7 +5,12 @@ import BudgetCard  from '../components/BudgetCard';
 import PageWrapper from '../components/PageWrapper';
 import { Plus, X } from 'lucide-react';
 
-const CATEGORIES = ['Food', 'Transport', 'Entertainment', 'Health', 'Shopping', 'Other'];
+const CATEGORIES = [
+  'Food & Dining', 'Groceries', 'Transport', 'Fuel', 'Shopping',
+  'Entertainment', 'Health & Medical', 'Fitness', 'Education',
+  'Bills & Utilities', 'Rent', 'Travel', 'Personal Care',
+  'Subscriptions', 'Salary', 'Freelance', 'Investment', 'Gift', 'Other',
+];
 
 export default function Budget() {
   const { budgets, transactions, fetchBudgets, fetchTransactions, saveBudget } = useFinanceStore();

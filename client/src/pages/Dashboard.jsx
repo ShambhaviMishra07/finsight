@@ -37,13 +37,25 @@ const contacts = [
 ];
 
 const categoryColors = {
-  Food:          '#FF9F43',
-  Transport:     '#54A0FF',
-  Entertainment: '#5F27CD',
-  Health:        '#1DD1A1',
-  Shopping:      '#FF6B9D',
-  Salary:        '#1A3C2E',
-  Other:         '#8395A7',
+  'Food & Dining':    '#FF9F43',
+  'Groceries':        '#F7B731',
+  'Transport':        '#54A0FF',
+  'Fuel':             '#48DBFB',
+  'Shopping':         '#FF6B9D',
+  'Entertainment':    '#5F27CD',
+  'Health & Medical': '#1DD1A1',
+  'Fitness':          '#00D2D3',
+  'Education':        '#3B82F6',
+  'Bills & Utilities':'#778CA3',
+  'Rent':             '#4B6584',
+  'Travel':           '#26de81',
+  'Personal Care':    '#fd9644',
+  'Subscriptions':    '#A55EEA',
+  'Salary':           '#1A3C2E',
+  'Freelance':        '#2D5A42',
+  'Investment':       '#C9A84C',
+  'Gift':             '#E84393',
+  'Other':            '#8395A7',
 };
 
 // ─── Styles ───────────────────────────────────────────────────

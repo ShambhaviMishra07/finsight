@@ -2,7 +2,27 @@ import { useState } from 'react';
 import { X } from 'lucide-react';
 import useFinanceStore from '../store/useFinanceStore';
 
-const CATEGORIES = ['Food', 'Transport', 'Entertainment', 'Health', 'Shopping', 'Salary', 'Other'];
+const CATEGORIES = [
+  'Food & Dining',
+  'Groceries',
+  'Transport',
+  'Fuel',
+  'Shopping',
+  'Entertainment',
+  'Health & Medical',
+  'Fitness',
+  'Education',
+  'Bills & Utilities',
+  'Rent',
+  'Travel',
+  'Personal Care',
+  'Subscriptions',
+  'Salary',
+  'Freelance',
+  'Investment',
+  'Gift',
+  'Other',
+];
 
 export default function AddTransactionModal({ onClose }) {
   const addTransaction = useFinanceStore((s) => s.addTransaction);
@@ -56,11 +76,22 @@ export default function AddTransactionModal({ onClose }) {
 
           <div>
             <label className="text-sm font-medium text-gray-700 block mb-1">Category</label>
-            <select value={form.category}
-              onChange={(e) => setForm({ ...form, category: e.target.value })}
-              className="w-full border border-gray-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-violet-500">
-              {CATEGORIES.map((c) => <option key={c}>{c}</option>)}
-            </select>
+          <select
+      value={form.category}
+      onChange={(e) => setForm({ ...form, category: e.target.value })}
+      className="w-full border border-gray-200 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-100 bg-white text-gray-800 rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-violet-500 appearance-none cursor-pointer"
+      style={{ colorScheme: 'light dark' }}
+    >
+      {CATEGORIES.map((c) => (
+        <option
+          key={c}
+          value={c}
+          className="bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-100"
+        >
+          {c}
+        </option>
+      ))}
+    </select>
           </div>
 
           <div>

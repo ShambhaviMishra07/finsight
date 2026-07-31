@@ -9,7 +9,7 @@ import Transactions     from './pages/Transactions';
 import Budget           from './pages/Budget';
 import Analytics        from './pages/Analytics';
 import LandingPage from './pages/LandingPage';
-
+import Settings from './pages/Settings';
 
 function App() {
   return (
@@ -25,6 +25,7 @@ function App() {
             <Route path="/budget"       element={<Budget />} />
             <Route path="/analytics"    element={<Analytics />} />
             <Route path="/home" element={<LandingPage />} />
+             <Route path="/settings" element={<Settings />} />
           </Route>
         </Routes>
       </BrowserRouter>

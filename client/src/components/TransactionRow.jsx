@@ -2,13 +2,25 @@ import { Trash2 } from 'lucide-react';
 import useFinanceStore from '../store/useFinanceStore';
 
 const categoryColors = {
-  Food:          'bg-orange-100 text-orange-700',
-  Transport:     'bg-blue-100   text-blue-700',
-  Entertainment: 'bg-purple-100 text-purple-700',
-  Health:        'bg-green-100  text-green-700',
-  Shopping:      'bg-pink-100   text-pink-700',
-  Salary:        'bg-teal-100   text-teal-700',
-  Other:         'bg-gray-100   text-gray-700',
+  'Food & Dining':    '#FF9F43',
+  'Groceries':        '#F7B731',
+  'Transport':        '#54A0FF',
+  'Fuel':             '#48DBFB',
+  'Shopping':         '#FF6B9D',
+  'Entertainment':    '#5F27CD',
+  'Health & Medical': '#1DD1A1',
+  'Fitness':          '#00D2D3',
+  'Education':        '#3B82F6',
+  'Bills & Utilities':'#778CA3',
+  'Rent':             '#4B6584',
+  'Travel':           '#26de81',
+  'Personal Care':    '#fd9644',
+  'Subscriptions':    '#A55EEA',
+  'Salary':           '#1A3C2E',
+  'Freelance':        '#2D5A42',
+  'Investment':       '#C9A84C',
+  'Gift':             '#E84393',
+  'Other':            '#8395A7',
 };
 
 export default function TransactionRow({ txn }) {
