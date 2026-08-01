@@ -508,11 +508,18 @@ export default function Dashboard() {
 
   // Budget goals — match transactions
   const currentMonthStr = new Date().toISOString().slice(0, 7);
-  const getSpent = (category) =>
-    transactions
-      .filter(t => t.type === 'expense' && t.category === category &&
-        new Date(t.date).toISOString().slice(0, 7) === currentMonthStr)
-      .reduce((s, t) => s + t.amount, 0);
+  const getSpent = (budgetCategory) =>
+  transactions
+    .filter((t) => {
+      if (t.type !== 'expense') return false;
+      if (new Date(t.date).toISOString().slice(0, 7) !== currentMonthStr) return false;
+      return (
+        t.category === budgetCategory ||
+        budgetCategory.toLowerCase().includes(t.category.toLowerCase()) ||
+        t.category.toLowerCase().includes(budgetCategory.toLowerCase())
+      );
+    })
+    .reduce((s, t) => s + t.amount, 0);
 
   const today = new Date().toLocaleDateString('en-IN', {
     day: 'numeric', month: 'long', year: 'numeric'
